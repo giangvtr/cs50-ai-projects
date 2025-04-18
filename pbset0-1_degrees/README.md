@@ -4,7 +4,7 @@ This project implements a program that determines the number of “degrees of se
 
 ---
 
-## 📌 Project Description
+## Project Description
 
 Given a database of actors and the movies they’ve appeared in, the program answers questions like:
 
@@ -37,7 +37,7 @@ The underlying task is framed as a graph search problem:
 * Basic CLI interaction
 
 ---
-##Project Structure
+## Project Structure
 ```bash
 pbset0-1_degrees
 ├── degrees.py           # Main driver script
