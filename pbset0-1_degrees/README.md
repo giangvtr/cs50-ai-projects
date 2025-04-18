@@ -38,6 +38,7 @@ The underlying task is framed as a graph search problem:
 
 ---
 ##Project Structure
+```bash
 pbset0-1_degrees
 ├── degrees.py           # Main driver script
 ├── util.py              # Search utilities (Node, QueueFrontier)
@@ -50,6 +51,7 @@ pbset0-1_degrees
 │   ├── movies.csv
 │   └── stars.csv
 └── README.md            # You're reading it!
+```
 
 ---
 ## Credits
