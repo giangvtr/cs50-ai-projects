@@ -1,8 +1,8 @@
-# 🎓 CS50’s Introduction to Artificial Intelligence with Python – Project Repository
+# CS50’s Introduction to Artificial Intelligence with Python – Project Repository
 
 Welcome to my project repository for **CS50’s Introduction to Artificial Intelligence with Python** (CS50AI), offered by Harvard University and taught by Brian Yu. This repository showcases my work, implementations, and learning progress throughout the course.
 
-## 📚 About the Course
+## About the Course
 
 CS50AI explores the foundational concepts behind artificial intelligence, including:
 
@@ -17,3 +17,6 @@ The course combines theory with practical projects that apply AI to real-world c
 > 🧠 [Course link](https://cs50.harvard.edu/ai/)  
 
 ---
+## Notes
+* All projects are implemented individually as part of the CS50AI coursework.
+* Some projects include starter code provided by the course; the core logic (especially AI algorithms) is implemented by me.
