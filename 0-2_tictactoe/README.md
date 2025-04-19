@@ -48,7 +48,11 @@ In VS Code :
 
 ---
 ## Gameplay
-When you run `python runner.py`, you will be able to play Tic-Tac-Toe against the AI via a graphical interface. You will be first prompted to choose to be 'X' or 'O'. X will start the game first
+When you run `python runner.py`, you will be able to play Tic-Tac-Toe against the AI via a graphical interface. You will be first prompted to choose to be 'X' or 'O'. X will start the game first.
+<p float="left">
+  <img src="start.png" width="45%" />
+  <img src="end.png" width="45%" />
+</p>
 
 ---
 ## Troubleshooting
