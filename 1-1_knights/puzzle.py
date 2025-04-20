@@ -32,17 +32,21 @@ knowledge1 = And(
 # Puzzle 2
 # A says "We are the same kind."
 # B says "We are of different kinds."
+same_kind = Or(And(AKnight,BKnight),And(AKnave,BKnave))
+different_kind = Or(And(AKnight,BKnave),And(AKnave,BKnight))
+
 knowledge2 = And(
     Or(AKnight,AKnave),
+    Not(And(AKnight, AKnave)),
     Or(BKnave,BKnight),
-    Implication(And(AKnave,BKnave),AKnight),
-    Implication(And(AKnight,BKnight), AKnight),
-    Implication(Not(And(AKnave,BKnave)),AKnave),
-    Implication(Not(And(AKnight,BKnight)),AKnave),
-    Implication(And(AKnave,BKnight),BKnight),
-    Implication(And(AKnight,BKnave),BKnight),
-    Implication(Not(And(AKnave,BKnight)),BKnave),
-    Implication(Not(And(AKnight,BKnave)),BKnave)
+    Not(And(BKnight, BKnave)),
+
+    Implication(AKnight, same_kind),
+    Implication(AKnave, Not(same_kind)),
+
+    Implication(BKnight, different_kind),
+    Implication(BKnave, Not(different_kind)),
+
 )
 
 # Puzzle 3
