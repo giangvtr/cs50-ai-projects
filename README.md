@@ -26,6 +26,7 @@ CS50AI explores the foundational concepts behind artificial intelligence, includ
 * `0-1_degrees` : A graph-based search algorithm to identify the shortest path of connections between two actors using a dataset of movies and people
 * `0-2_tictactoe` : An AI bot to beat you in tic-tac-toe using minimax algorithm
 * `1-1_knights` : A logical inference AI to solve the Knights and Knaves puzzle by modeling knowledge and applying propositional logic.
+* `1-2_minesweeper`: Solve your minesweeper game base using logic inference
 
 ---
 ## Notes
