@@ -9,6 +9,10 @@ This project is a Python implementation of Minesweeper — but instead of relyin
 
 The AI dynamically updates its knowledge base as it explores the board, allowing it to make increasingly smarter decisions — much like a slightly less caffeinated version of a real player.
 
+<p align="center">
+  <img src="./assets/images/game.png" alt="Alt text" width="500">
+</p>
+
 ---
 ## How It Works
 The project contains three main components:
