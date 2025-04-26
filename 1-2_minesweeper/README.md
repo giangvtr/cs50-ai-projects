@@ -61,9 +61,9 @@ This lightweight knowledge management allows efficient, real-time decision-makin
 ```
 ---
 ## Key AI Strategies
-    Safe Move First: Always select a known safe move if available.
-    Random Move Fallback: If no safe moves are known, pick a random unexplored cell (because life is sometimes chaos).
-    Iterative Knowledge Expansion: Constantly update known facts as more cells are explored.
+* Safe Move First: Always select a known safe move if available.
+* Random Move Fallback: If no safe moves are known, pick a random unexplored cell (because life is sometimes chaos).
+* Iterative Knowledge Expansion: Constantly update known facts as more cells are explored.
 
 ---
 ## Future Improvements
