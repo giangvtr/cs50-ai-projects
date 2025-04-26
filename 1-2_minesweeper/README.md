@@ -33,7 +33,7 @@ pip install -r requirements.txt
 # Run the graphical interface:
 python runner.py
 ```
-You can either play manually or watch the AI flex its brain muscles.
+> You can either play manually or watch the AI flex its brain muscles.
 ---
 
 ## Knowledge Representation
@@ -52,12 +52,13 @@ This lightweight knowledge management allows efficient, real-time decision-makin
 
 ---
 ## Project Structure
+```bash
 1-2_minesweeper/
 ├── runner.py        # GUI interface for the game
 ├── minesweeper.py   # Core gameplay logic and AI reasoning
 ├── requirements.txt # Required Python packages (pygame)
 └── README.md        # This file
-
+```
 ---
 ## Key AI Strategies
     Safe Move First: Always select a known safe move if available.
