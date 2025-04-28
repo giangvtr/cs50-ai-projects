@@ -27,6 +27,7 @@ CS50AI explores the foundational concepts behind artificial intelligence, includ
 * `0-2_tictactoe` : An AI bot to beat you in tic-tac-toe using minimax algorithm
 * `1-1_knights` : A logical inference AI to solve the Knights and Knaves puzzle by modeling knowledge and applying propositional logic.
 * `1-2_minesweeper`: Solve your minesweeper game base using logic inference
+* `2-1_pagerank`: 
 
 ---
 ## Notes
