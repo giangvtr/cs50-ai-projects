@@ -127,6 +127,13 @@ def powerset(s):
         )
     ]
 
+def gene_pass_proba(parent_gene_count):
+    if parent_gene_count == 2:
+        return 1 - PROBS["mutation"]
+    elif parent_gene_count == 1:
+        return 0.5
+    else:
+        return PROBS["mutation"]
 
 def joint_probability(people, one_gene, two_genes, have_trait):
     """
@@ -139,8 +146,54 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
-    raise NotImplementedError
+    joint_proba = 1
+    for person in people:
+        num_genes = 0
+        # If that person do not have parents in the same list
+        if people[person]["mother"] not in people and people[person]["father"] not in people:
+            if person in one_gene:
+                num_genes = 1
+            if person in two_genes:
+                num_genes = 2
+            joint_proba *= PROBS["gene"][num_genes]
+            prob_trait = PROBS["trait"][num_genes][True]
+            if person in have_trait:
+                joint_proba *= prob_trait
+            else:
+                joint_proba *= (1 - prob_trait)
 
+        # If that person have parents in the same list
+        else:
+            father_num_genes = 0
+            mother_num_genes = 0
+            if people[person]["father"] in two_genes:
+                father_num_genes = 2
+            if people[person]["mother"] in two_genes:
+                mother_num_genes = 2
+            if people[person]["father"] in one_gene:
+                father_num_genes = 1
+            if people[person]["mother"] in one_gene:
+                mother_num_genes = 1
+
+            mother_prob = gene_pass_proba(mother_num_genes)
+            father_prob = gene_pass_proba(father_num_genes)
+
+            if person in two_genes:
+                joint_proba *= mother_prob * father_prob
+                num_genes = 2
+            elif person in one_gene:
+                joint_proba *= mother_prob * (1-father_prob) + father_prob * (1-mother_prob)
+                num_genes = 1
+            else:
+                joint_proba *= (1 - mother_prob) * (1 - father_prob)
+                num_genes = 0
+
+            prob_trait = PROBS["trait"][num_genes][True]
+            if person in have_trait:
+                joint_proba *= prob_trait
+            else:
+                joint_proba *= (1 - prob_trait)
+    return joint_proba
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
     """
