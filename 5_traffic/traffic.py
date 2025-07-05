@@ -46,7 +46,7 @@ def main():
 
 def load_data(data_dir):
     """
-    Load image data from directory `data_dir`.
+    Load image data from the directory `data_dir`.
 
     Assume `data_dir` has one directory named after each category, numbered
     0 through NUM_CATEGORIES - 1. Inside each category directory will be some
@@ -58,8 +58,19 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    raise NotImplementedError
+    images = []
+    labels = []
+    for i in range(NUM_CATEGORIES):
+        content = os.listdir(os.path.join(data_dir, str(i)))
 
+        for filename in content:
+            image = cv2.imread(os.path.join(data_dir, str(i), filename))
+            if image is not None:
+                resized = cv2.resize(image, (IMG_WIDTH, IMG_HEIGHT))
+                np_arr = np.array(resized)
+                images.append(np_arr)
+            labels.append(i)
+    return (images, labels)
 
 def get_model():
     """
@@ -67,8 +78,36 @@ def get_model():
     `input_shape` of the first layer is `(IMG_WIDTH, IMG_HEIGHT, 3)`.
     The output layer should have `NUM_CATEGORIES` units, one for each category.
     """
-    raise NotImplementedError
+    model = tf.keras.models.Sequential([
+        # 1st layer
+        # Convolutional layer. Learn 32 filters using a 3x3 kernel
+        tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)),
 
+        # Max-pooling layer, using 2x2 pool size
+        # Downsamples the image
+        tf.keras.layers.MaxPooling2D(2, 2),
+
+        tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+        tf.keras.layers.MaxPooling2D((2, 2)),
+
+        tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
+        tf.keras.layers.MaxPooling2D((2, 2)),
+
+        # Flatten units
+        tf.keras.layers.Flatten(),
+
+        # Add a hidden layer with dropout
+        tf.keras.layers.Dense(128, activation="relu"),
+        tf.keras.layers.Dropout(0.5),
+
+        # The output layer
+        tf.keras.layers.Dense(NUM_CATEGORIES, activation='softmax'),
+    ])
+    model.compile(optimizer='adam',
+                  loss=tf.keras.losses.CategoricalCrossentropy(from_logits=False),
+                  metrics=['accuracy'])
+
+    return model
 
 if __name__ == "__main__":
     main()
