@@ -30,6 +30,11 @@ CS50AI explores the foundational concepts behind artificial intelligence, includ
 * `2-1_pagerank`: 
 
 ---
+## How to prepare the environment
+* To activate the env: ```source .../cs50_ai_env/bin/activate```
+* In CLion : Go to Settings > Project > Add existing interpreter
+* Browse the right python file in one of the venv created > bin
+---
 ## Notes
 * All projects are implemented individually as part of the CS50AI coursework.
 * Some projects include starter code provided by the course; the core logic (especially AI algorithms) is implemented by me.
