@@ -2,7 +2,8 @@
 __**Status** : Finished__
 
 Welcome to my project repository for **CS50’s Introduction to Artificial Intelligence with Python** (CS50AI), offered by Harvard University and taught by Brian Yu. This repository showcases my work, implementations, and learning progress throughout the course.
-> 🧠 [Course link](https://cs50.harvard.edu/ai/)  
+> 🧠 [Course link](https://cs50.harvard.edu/ai/)
+<img src="certif.png" alt="Certificate" width="400" style="border: 2px solid #ccc; border-radius: 8px; padding: 5px; background: white;">
 
 ## About the Course
 
